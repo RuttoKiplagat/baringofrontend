@@ -1,0 +1,20 @@
+export default [
+  { id: 1, src: '', alt: 'Students studying in the library', category: 'Academics' },
+  { id: 2, src: '/images/about/baringo.jpg', alt: 'Main school administration block', category: 'Campus' },
+  { id: 3, src: '', alt: 'Athletics team on the track', category: 'Sports' },
+  { id: 4, src: '', alt: 'School choir performing at the music festival', category: 'Events' },
+  { id: 5, src: '', alt: 'Students relaxing during break time', category: 'Student Life' },
+  { id: 6, src: '', alt: 'Chemistry practical in the science lab', category: 'Academics' },
+  { id: 7, src: '', alt: 'Hockey team in action', category: 'Sports' },
+  { id: 8, src: '', alt: 'Tree planting exercise during environmental day', category: 'Events' },
+  { id: 9, src: '', alt: 'Students using the new computer laboratory', category: 'Academics' },
+  { id: 10, src: '', alt: 'Community service by the Red Cross Society', category: 'Student Life' },
+  { id: 11, src: '', alt: 'Rugby team scrum', category: 'Sports' },
+  { id: 12, src: '/images/about/pricegiving.jpg', alt: 'Graduating students during prize giving day', category: 'Events' },
+  { id: 13, src: '', alt: 'Debate club members during a competition', category: 'Student Life' },
+  { id: 14, src: '', alt: 'Woodwork workshop', category: 'Academics' },
+  { id: 15, src: '', alt: 'Basketball match at the school court', category: 'Sports' },
+  { id: 16, src: '', alt: 'Beautiful campus pathways and gardens', category: 'Campus' },
+  { id: 17, src: '', alt: 'Students having lunch at the dining hall', category: 'Student Life' },
+  { id: 18, src: '', alt: 'Group discussion in the school grounds', category: 'Campus' }
+]
