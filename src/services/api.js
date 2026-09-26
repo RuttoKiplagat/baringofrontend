@@ -68,6 +68,11 @@ export const api = {
     const response = await apiClient.post('/contact', formData)
     return response.data
   },
+    // Applications
+  submitApplication: async (formData) => {
+    const response = await apiClient.post('/applications', formData)
+    return response.data
+  },
 
   // Newsletter
   subscribeNewsletter: (email) => mockDelay({ success: true, message: 'Subscribed successfully!' }),

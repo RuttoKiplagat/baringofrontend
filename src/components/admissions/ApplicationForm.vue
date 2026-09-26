@@ -809,7 +809,7 @@
 
 <script setup>
 import { computed, reactive, ref } from 'vue'
-import axios from 'axios'
+import api from '@/services/api'
 
 const currentStep = ref(0)
 const confirmed = ref(false)
@@ -965,22 +965,18 @@ async function submitApplication() {
   submitError.value = ''
 
   try {
+  const response = await api.submitApplication(form)
 
-    const response = await axios.post(
-  '/api/applications',
-  form
-)
+  const applicationNumber =
+    response.application_number
 
-    const applicationNumber =
-      response.data.application_number
+  localStorage.setItem(
+    'bhs_application_number',
+    applicationNumber
+  )
 
-    localStorage.setItem(
-      'bhs_application_number',
-      applicationNumber
-    )
-
-    window.location.href =
-      `/admissions/success?application=${applicationNumber}`
+  window.location.href =
+    `/admissions/success?application=${applicationNumber}`
 
   } catch (error) {
 
