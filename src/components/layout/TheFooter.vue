@@ -50,11 +50,11 @@
           </ul>
         </div>
 
-        <!-- Academics -->
+        <!-- Departments -->
         <div>
-          <h4 class="font-heading font-semibold text-white text-lg mb-6">Academics</h4>
+          <h4 class="font-heading font-semibold text-white text-lg mb-6">Departments</h4>
           <ul class="space-y-3">
-            <li v-for="link in academicsLinks" :key="link.path">
+            <li v-for="link in departmentLinks" :key="link.path">
               <router-link
                 :to="link.path"
                 class="text-gray-400 hover:text-secondary text-sm font-sans transition-colors duration-200 flex items-center gap-2 group"
@@ -141,6 +141,8 @@ import api from '@/services/api'
 const currentYear = new Date().getFullYear()
 const email = ref('')
 
+import departmentsData from '@/data/departments.js'
+
 const quickLinks = [
   { label: 'About Us', path: '/about' },
   { label: 'Admissions', path: '/admissions' },
@@ -151,13 +153,10 @@ const quickLinks = [
   { label: 'Downloads', path: '/downloads' }
 ]
 
-const academicsLinks = [
-  { label: 'Academic Programs', path: '/academics' },
-  { label: 'Departments', path: '/departments' },
-  { label: 'Our Teachers', path: '/teachers' },
-  { label: 'Sports', path: '/sports' },
-  { label: 'Clubs & Societies', path: '/clubs' }
-]
+const departmentLinks = departmentsData.slice(0, 6).map(dept => ({
+  label: dept.name,
+  path: `/departments/${dept.slug}`
+}))
 
 // Simple SVG icons for social media as render functions
 const socialIcons = {

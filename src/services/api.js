@@ -64,7 +64,10 @@ export const api = {
   getTestimonials: () => mockDelay(testimonialsData),
 
   // Contact form
-  submitContactForm: (formData) => mockDelay({ success: true, message: 'Message sent successfully!' }),
+  submitContactForm: async (formData) => {
+    const response = await apiClient.post('/contact', formData)
+    return response.data
+  },
 
   // Newsletter
   subscribeNewsletter: (email) => mockDelay({ success: true, message: 'Subscribed successfully!' }),

@@ -27,10 +27,14 @@
               </div>
             </div>
           </div>
-          <a :href="download.file_path" target="_blank"
-            class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition text-sm font-medium flex items-center gap-2">
+          <a
+            :href="download.file_path"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition text-sm font-medium flex items-center gap-2"
+          >
             <ArrowDownTrayIcon class="w-4 h-4" />
-            Download
+            View pdf
           </a>
         </div>
       </div>

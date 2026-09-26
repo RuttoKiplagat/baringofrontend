@@ -34,7 +34,7 @@
 import { onMounted } from 'vue'
 import { UserGroupIcon } from '@heroicons/vue/24/outline'
 import { useClubsStore } from '@/stores/clubs.js'
-import Loader from '@/components/common/Loader'
+import Loader from '@/components/common/Loader.vue'
 
 const clubsStore = useClubsStore()
 

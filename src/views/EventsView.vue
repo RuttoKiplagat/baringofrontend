@@ -3,7 +3,7 @@ import { ref, computed, onMounted } from 'vue'
 import { RouterLink } from 'vue-router'
 import { MagnifyingGlassIcon, CalendarIcon, MapPinIcon, ClockIcon, ArrowRightIcon } from '@heroicons/vue/24/outline'
 import { useEventsStore } from '@/stores/event.js'
-import Loader from '@/components/common/loader.vue' // Adjust if needed
+import Loader from '@/components/common/Loader.vue'
 
 const eventsStore = useEventsStore()
 
@@ -121,8 +121,8 @@ const formatTime = (dStr) => {
               <div class="flex items-center gap-2"><MapPinIcon class="w-5 h-5 text-secondary" /> {{ featuredEvent.location }}</div>
             </div>
             <div>
-              <RouterLink :to="`/events/${featuredEvent.id}`" class="inline-flex items-center justify-center px-8 py-3.5 bg-navy dark:bg-white text-white dark:text-navy font-bold font-sans uppercase tracking-wide text-sm rounded shadow-lg hover:bg-navy-light dark:hover:bg-gray-200 transition-colors">
-                Event Details <ArrowRightIcon class="w-4 h-4 ml-2" />
+              <RouterLink :to="`/events/${featuredEvent.slug || featuredEvent.id}`" class="inline-flex items-center justify-center px-8 py-3.5 bg-navy dark:bg-white text-white dark:text-navy font-bold font-sans uppercase tracking-wide text-sm rounded shadow-lg hover:bg-navy-light dark:hover:bg-gray-200 transition-colors">
+                View Details <ArrowRightIcon class="w-4 h-4 ml-2" />
               </RouterLink>
             </div>
           </div>
@@ -169,7 +169,7 @@ const formatTime = (dStr) => {
         <div v-else class="space-y-6">
           <RouterLink
             v-for="(event, idx) in filteredUpcoming" :key="event.id"
-            :to="`/events/${event.id}`"
+            :to="`/events/${event.slug || event.id}`"
             class="group flex flex-col md:flex-row bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-700 hover:shadow-elegant transition-all duration-300 hover:-translate-y-1"
             data-aos="fade-up" :data-aos-delay="idx * 50"
           >
@@ -213,7 +213,7 @@ const formatTime = (dStr) => {
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <RouterLink
             v-for="(event, idx) in filteredPast.slice(0, 6)" :key="event.id"
-            :to="`/events/${event.id}`"
+            :to="`/events/${event.slug || event.id}`"
             class="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-700 hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 flex flex-col"
             data-aos="fade-up" :data-aos-delay="idx * 50"
           >

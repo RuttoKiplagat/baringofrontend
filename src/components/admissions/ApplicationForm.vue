@@ -167,7 +167,7 @@
               >
                 <option value="">Select gender</option>
                 <option value="male">Male</option>
-                <option value="female">Female</option>
+                
               </select>
 
               <p v-if="errors.gender" class="error">
@@ -852,7 +852,7 @@ const form = reactive({
   previous_school: '',
   last_class_completed: '',
   academic_information: '',
-  year_completed: '',
+  year_completed: 'null',
   reason_for_applying: '',
 
   special_needs: '',
@@ -967,9 +967,9 @@ async function submitApplication() {
   try {
 
     const response = await axios.post(
-      `${import.meta.env.VITE_API_URL}/api/applications`,
-      form
-    )
+  '/api/applications',
+  form
+)
 
     const applicationNumber =
       response.data.application_number

@@ -6,6 +6,7 @@ import {
   EnvelopeIcon,
   ArrowRightIcon,
 } from '@heroicons/vue/24/outline'
+import api from '@/services/api'
 
 const form = ref({
   name: '',
@@ -14,14 +15,39 @@ const form = ref({
   message: '',
 })
 
-const submitForm = () => {
-  alert('Thank you for your message! We will get back to you soon.')
+const isSubmitting = ref(false)
+const successMessage = ref('')
+const errorMessage = ref('')
 
-  form.value = {
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
+const submitForm = async () => {
+  if (isSubmitting.value) return
+
+  isSubmitting.value = true
+  successMessage.value = ''
+  errorMessage.value = ''
+
+  try {
+    const response = await api.submitContactForm(form.value)
+    
+    successMessage.value = 'Your message has been sent successfully. We will get back to you soon.'
+    
+    // Clear form
+    form.value = {
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+    }
+    
+    // Auto-clear success message after 5 seconds
+    setTimeout(() => {
+      successMessage.value = ''
+    }, 5000)
+    
+  } catch (error) {
+    errorMessage.value = error.response?.data?.message || 'Sorry, there was an error sending your message. Please try again later.'
+  } finally {
+    isSubmitting.value = false
   }
 }
 </script>
@@ -317,6 +343,14 @@ const submitForm = () => {
                    dark:bg-gray-900
                    sm:p-8"
           >
+            <!-- Status Messages -->
+            <div v-if="successMessage" class="mb-6 p-4 rounded-lg bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-400 border border-green-200 dark:border-green-800 text-sm font-medium">
+              {{ successMessage }}
+            </div>
+            
+            <div v-if="errorMessage" class="mb-6 p-4 rounded-lg bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-400 border border-red-200 dark:border-red-800 text-sm font-medium">
+              {{ errorMessage }}
+            </div>
 
             <form
               @submit.prevent="submitForm"
@@ -445,6 +479,7 @@ const submitForm = () => {
               <!-- Submit -->
               <button
                 type="submit"
+                :disabled="isSubmitting"
                 class="flex w-full items-center
                        justify-center gap-3
                        rounded-lg bg-primary
@@ -453,11 +488,17 @@ const submitForm = () => {
                        duration-300
                        hover:-translate-y-0.5
                        hover:bg-primary/90
-                       hover:shadow-lg"
+                       hover:shadow-lg
+                       disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
               >
-                Send Message
+                <span v-if="isSubmitting">Sending...</span>
+                <span v-else>Send Message</span>
 
-                <ArrowRightIcon class="h-5 w-5" />
+                <ArrowRightIcon v-if="!isSubmitting" class="h-5 w-5" />
+                <svg v-else class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
               </button>
 
             </form>

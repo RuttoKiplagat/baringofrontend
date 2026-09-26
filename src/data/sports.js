@@ -4,7 +4,7 @@ export default [
     name: 'Football',
     description: 'Our football team is a powerhouse in the county, promoting teamwork, agility, and sportsmanship. We train rigorously to compete at the highest levels of school championships.',
     achievements: ['County Champions 2025', 'Regional Finalists 2024', 'Best Disciplined Team 2023'],
-    image: 'https://images.unsplash.com/photo-1518605368461-1ee12523f05f?w=800&h=600&fit=crop',
+    image: '/images/studentlife/football.jpg',
     season: 'Term 2',
     coach: 'Mr. Ochieng'
   },

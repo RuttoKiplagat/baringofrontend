@@ -347,27 +347,27 @@ const introMetrics = [
               <div class="flex flex-wrap gap-2 mb-8">
                 <span
                   v-for="subject in dept.subjects"
-                  :key="subject"
+                  :key="subject.name"
                   class="px-3 py-1 text-xs font-sans font-medium text-navy dark:text-gray-300 bg-gray-100 dark:bg-gray-700 rounded-full"
                 >
-                  {{ subject }}
+                  {{ subject.name }}
                 </span>
               </div>
 
               <!-- HOD -->
-              <div v-if="dept.hod" class="flex items-center gap-3 mb-6 pb-6 border-t border-gray-100 dark:border-gray-700 pt-6">
+              <div v-if="dept.head" class="flex items-center gap-3 mb-6 pb-6 border-t border-gray-100 dark:border-gray-700 pt-6">
                 <div class="w-8 h-8 rounded-full bg-navy/10 dark:bg-white/10 flex items-center justify-center">
                   <UserGroupIcon class="w-4 h-4 text-navy dark:text-gray-300" />
                 </div>
                 <div>
                   <p class="text-xs text-gray-400 dark:text-gray-500 font-sans uppercase tracking-wider">Head of Department</p>
-                  <p class="text-sm font-sans font-semibold text-navy dark:text-white">{{ dept.hod }}</p>
+                  <p class="text-sm font-sans font-semibold text-navy dark:text-white">{{ dept.head.name }}</p>
                 </div>
               </div>
 
               <!-- CTA -->
               <RouterLink
-                :to="{ name: 'departments' }"
+                :to="{ name: 'department-details', params: { slug: dept.slug } }"
                 class="inline-flex items-center text-sm font-sans font-bold text-navy dark:text-white group-hover:text-secondary transition-colors duration-300"
               >
                 Explore Department
@@ -427,15 +427,7 @@ const introMetrics = [
                 </div>
               </div>
 
-              <div>
-                <RouterLink
-                  :to="{ name: 'departments' }"
-                  class="inline-flex items-center px-8 py-3.5 bg-secondary text-navy font-bold font-sans rounded hover:bg-secondary-light transition-colors shadow-lg"
-                >
-                  Learn More
-                  <ArrowRightIcon class="w-4 h-4 ml-2" />
-                </RouterLink>
-              </div>
+             
             </div>
           </div>
         </div>

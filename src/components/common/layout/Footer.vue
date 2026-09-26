@@ -4,7 +4,7 @@
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
         <div>
           <div class="flex items-center space-x-3 mb-4">
-            <div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center font-bold text-primary text-lg">
+            <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center font-bold text-primary text-lg">
 
               <img
                 src="/bhs.png"
@@ -24,7 +24,7 @@
           <ul class="space-y-2 text-gray-300 text-sm">
             <li><RouterLink to="/about" class="hover:text-white transition">About Us</RouterLink></li>
             <li><RouterLink to="/admissions" class="hover:text-white transition">Admissions</RouterLink></li>
-            <li><RouterLink to="/downloads" class="hover:text-white transition">Downloads</RouterLink></li>
+            <li><RouterLink to="/gallery" class="hover:text-white transition">Gallery</RouterLink></li>
             <li><RouterLink to="/contact" class="hover:text-white transition">Contact</RouterLink></li>
           </ul>
         </div>

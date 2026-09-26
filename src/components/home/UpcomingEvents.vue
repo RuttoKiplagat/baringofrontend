@@ -61,10 +61,11 @@ onMounted(() => {
           </div>
 
           <div v-else class="space-y-6">
-            <div 
+            <RouterLink 
               v-for="(event, index) in eventsStore.upcomingEvents.slice(0, 3)" 
               :key="event.id"
-              class="group flex flex-col sm:flex-row items-start sm:items-center bg-gray-50 dark:bg-gray-800 rounded-xl p-6 hover:bg-primary dark:hover:bg-primary-dark transition-colors duration-300 shadow-sm hover:shadow-xl"
+              :to="`/events/${event.slug || event.id}`"
+              class="group flex flex-col sm:flex-row items-start sm:items-center bg-gray-50 dark:bg-gray-800 rounded-xl p-6 hover:bg-primary dark:hover:bg-primary-dark transition-colors duration-300 shadow-sm hover:shadow-xl block"
               data-aos="fade-up"
               :data-aos-delay="index * 150"
             >
@@ -94,7 +95,7 @@ onMounted(() => {
               <div class="hidden sm:flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-gray-900 group-hover:bg-secondary transition-colors duration-300 ml-4">
                 <ArrowRightIcon class="w-5 h-5 text-primary group-hover:text-white" />
               </div>
-            </div>
+            </RouterLink>
           </div>
         </div>
 

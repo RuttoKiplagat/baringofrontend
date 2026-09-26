@@ -2,7 +2,7 @@
 import { ref, computed, onMounted } from 'vue'
 import { RouterLink } from 'vue-router'
 import { MagnifyingGlassIcon, CalendarIcon, ArrowRightIcon, TrophyIcon, UserIcon } from '@heroicons/vue/24/outline'
-import { useNewsStore } from '@/stores/new.js' // We fixed new.js or news.js? I recall fixing 'news.js' but in 'LatestNews' it imports from 'new.js'. Wait, let's use the one in src/stores/news.js or new.js depending on what exists. Actually, earlier I wrote to `src/stores/news.js` and updated LatestNews to use `new.js`. Let me just fetch data from `@/data/news.js` directly to be safe, or use the store carefully. I'll import from `@/data/news.js` directly and build a simple reactive state to ensure it works flawlessly.
+import { useNewsStore } from '@/stores/new.js' 
 
 import newsData from '@/data/news.js'
 

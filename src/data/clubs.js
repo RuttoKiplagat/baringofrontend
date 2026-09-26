@@ -66,7 +66,7 @@ export default [
     meetingDay: 'Tuesday',
     patron: 'Mr. Kevin Mutua',
     memberCount: 55,
-    image: 'https://images.unsplash.com/photo-1581093458791-9dc47525e737?w=800&h=600&fit=crop',
+    image: '/images/studentlife/technology.jpg',
     category: 'Academic'
   },
   {

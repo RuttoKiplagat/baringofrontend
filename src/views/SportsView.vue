@@ -39,7 +39,7 @@
 import { onMounted } from 'vue'
 import { TrophyIcon } from '@heroicons/vue/24/outline'
 import { useSportsStore } from '@/stores/sports.js'
-import Loader from '@/components/common/Loader'
+import Loader from '@/components/common/Loader.vue'
 
 const sportsStore = useSportsStore()                                                                                  
 

@@ -43,9 +43,9 @@ const academicFeatures = [
 
 // --- STUDENT EXPERIENCE ---
 const studentExperiences = [
-  { title: 'Championship Sports', desc: 'Building resilience and teamwork on the field.', img: '/images/about/experience-1.jpg' },
+  { title: 'Championship Sports', desc: 'Building resilience and teamwork on the field.', img: '/images/home/sports.jpg' },
   { title: 'Vibrant Clubs', desc: 'Over 20 active societies ranging from debate to robotics.', img: '/images/about/club.jpg' },
-  { title: 'Community Service', desc: 'Instilling a culture of giving back to society.', img: '/images/about/experience-3.jpg' }
+  { title: 'Community Service', desc: 'Instilling a culture of giving back to society.', img: '/images/studentlife/environmental.jpg' }
 ]
 
 // --- STATISTICS SECTION ---
@@ -76,10 +76,10 @@ const reasons = [
 
 // --- GALLERY ---
 const galleryImages = [
-  { src: '/images/about/gallery-1.jpg', alt: 'Main Administration Block', caption: 'Administration Block' },
-  { src: '/images/about/gallery-2.jpg', alt: 'Students in Science Lab', caption: 'Modern Science Labs' },
-  { src: '/images/about/gallery-3.jpg', alt: 'School Library', caption: 'The School Library' },
-  { src: '/images/about/gallery-4.jpg', alt: 'Sports Field', caption: 'Athletics & Sports' },
+  { src: '/images/about/baringo.jpg', alt: 'Main Administration Block', caption: 'Administration Block' },
+  { src: '/images/about/science.jpg', alt: 'Students in Science Lab', caption: 'Modern Science Labs' },
+  { src: '/images/about/library.jpg', alt: 'School Library', caption: 'The School Library' },
+  { src: '/images/about/field.jpg', alt: 'Sports Field', caption: 'Athletics & Sports' },
   { src: '/images/about/pricegiving.jpg', alt: 'Graduation Ceremony', caption: 'Prize Giving Day' },
   { src: '/images/about/students.jpg', alt: 'Students interacting', caption: 'Vibrant High School Life' }
 ]
@@ -275,7 +275,7 @@ const galleryImages = [
       </div>
     </section>
 
-    <!-- OUR STORY-->
+    <!--5.  OUR STORY-->
    <section
   id="our-story"
   class="section-padding bg-white dark:bg-darkbg overflow-hidden"
@@ -482,14 +482,7 @@ const galleryImages = [
                 <h3 class="text-xl font-heading font-bold text-navy dark:text-white">{{ schoolInfo.principal.name }}</h3>
                 <p class="text-gray-500 dark:text-gray-400 font-sans text-sm uppercase tracking-wider">{{ schoolInfo.principal.title }}</p>
               </div>
-              <div>
-                <RouterLink
-                  to="/principal"
-                  class="inline-flex items-center px-8 py-3.5 bg-navy dark:bg-white text-white dark:text-navy font-bold font-sans rounded hover:bg-navy-light dark:hover:bg-gray-200 transition-colors shadow-lg"
-                >
-                  Read Full Message
-                </RouterLink>
-              </div>
+              
             </div>
           </div>
         </div>

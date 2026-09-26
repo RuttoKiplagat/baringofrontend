@@ -8,7 +8,7 @@ export default {
   email: 'info@baringohigh.ac.ke',
   website: 'www.baringohigh.ac.ke',
   principal: {
-    name: 'Dr. James Kiplagat',
+    name: 'Mr. Kibet Kimosop',
     title: 'Principal',
     message: `Welcome to Baringo High School, a premier institution of academic excellence nestled in the scenic highlands of Baringo County. For over six decades, our school has been a beacon of knowledge, discipline, and character formation.
 
@@ -21,7 +21,7 @@ Our holistic approach to education encompasses rigorous academics, vibrant co-cu
 I invite you to explore our website and discover what makes Baringo High School truly exceptional. Whether you are a prospective student, a parent, or an alumnus, you are part of our growing family.
 
 Welcome to excellence.`,
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop'
+    image: '/images/about/principal.jpg'
   },
   mission: 'To provide quality, holistic education that nurtures academic excellence, moral integrity, and responsible citizenship while preparing students for leadership in a dynamic global society.',
   vision: 'To be a centre of excellence in education, producing globally competitive leaders distinguished by strong ethical values, innovation, and a commitment to service.',
@@ -41,5 +41,5 @@ Welcome to excellence.`,
     youtube: 'https://youtube.com/@baringohighschool'
   },
   officeHours: 'Monday – Friday: 8:00 AM – 5:00 PM',
-  whatsapp: '+254700123456'
+  whatsapp: '+254118749747'
 }
