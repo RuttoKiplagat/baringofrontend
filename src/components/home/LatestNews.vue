@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted } from 'vue'
 import { ArrowRightIcon } from '@heroicons/vue/24/outline'
-import Loader from '@/components/common/loader.vue'
+import Loader from '@/components/common/Loader.vue'
 import NewsCard from '@/components/news/NewsCard.vue'
 import { useNewsStore } from '@/stores/new.js'
 
