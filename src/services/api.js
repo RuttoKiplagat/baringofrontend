@@ -2,7 +2,7 @@ import axios from 'axios'
 
 // Axios instance configured for future Laravel backend
 const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || '/api',
+  baseURL: `${import.meta.env.VITE_API_URL || ''}/api`,
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
